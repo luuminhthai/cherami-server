@@ -103,13 +103,14 @@ cover_profile: lint bins
 	@echo "mode: atomic" > $(BUILD)/cover.out
 
 	@echo Running integration tests:
-	number=1 ; while [[ $$number -le 100 ]] ; do \
-		@echo Runnin times: $$number
-		@time for dir in $(INTEG_TEST_DIRS); do \
+	@number=1 ; while [[ $$number -le 100 ]] ; do \
+		echo Running times: $$number ; \
+		time for dir in $(INTEG_TEST_DIRS); do \
 			mkdir -p $(BUILD)/"$$dir"; \
 			go test $(EMBED) "$$dir" $(TEST_ARG) $(GOCOVERPKG_ARG) -coverprofile=$(BUILD)/"$$dir"/coverage.out || exit 1; \
 			cat $(BUILD)/"$$dir"/coverage.out | grep -v "mode: atomic" >> $(BUILD)/cover.out; \
-		done \
+		done ; \
+		((number = number + 1)) ; \
 	done
 
 #	@echo Running tests:
