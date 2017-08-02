@@ -141,7 +141,7 @@ func createCheramiClient(svcName string, ipaddr string, port int, logger bark.Lo
 	return cc
 }
 
-func (s *NetIntegrationSuiteParallelC) TestMsgCacheLimit() {
+func (s *NetIntegrationSuiteParallelC) _TestMsgCacheLimit() {
 	destPath := "/dest/TestMsgCacheLimit"
 	cgPath := "/cg/TestMsgCacheLimit"
 	testMsgCount := 100
@@ -315,7 +315,7 @@ ReadLoop2:
 	consumerTest.Close()
 }
 
-func (s *NetIntegrationSuiteParallelE) TestWriteEndToEndSuccessWithCassandra() {
+func (s *NetIntegrationSuiteParallelE) _TestWriteEndToEndSuccessWithCassandra() {
 	destPath := "/dest/testWriteEndToEndCassandra"
 	cgPath := "/cg/testWriteEndToEndCassandra"
 	testMsgCount := 100
@@ -456,7 +456,7 @@ ReadLoop:
 	s.Nil(err, "Failed to delete destination")
 }
 
-func (s *NetIntegrationSuiteParallelE) TestWriteWithDrain() { // Disabled pending fix for flakiness
+func (s *NetIntegrationSuiteParallelE) _TestWriteWithDrain() { // Disabled pending fix for flakiness
 	destPath := "/dest/testWriteDrain"
 	cgPath := "/cg/testWriteDrain"
 	testMsgCount := 1000
@@ -630,7 +630,7 @@ ReadLoop:
 	s.Nil(err, "Failed to delete destination")
 }
 
-func (s *NetIntegrationSuiteSerial) TestWriteEndToEndMultipleStore() {
+func (s *NetIntegrationSuiteSerial) _TestWriteEndToEndMultipleStore() {
 	destPath := "/dest/testCassandraMultiple"
 	cgPath := "/cg/testCassandraMultiple"
 	testMsgCount := 10
@@ -1499,7 +1499,7 @@ operationsLoop:
 
 }
 
-func (s *NetIntegrationSuiteParallelD) TestSmartRetryDisableDuringDLQMerge() {
+func (s *NetIntegrationSuiteParallelD) _TestSmartRetryDisableDuringDLQMerge() {
 	const (
 		destPath                   = `/test.runner.SmartRetry/SRDDDM` // This path ensures that throttling is limited for this test
 		cgPath                     = `/test.runner.SmartRetry/SRDDDMCG`
@@ -1806,7 +1806,7 @@ readLoop:
 	}
 }
 
-func (s *NetIntegrationSuiteParallelF) TestSmartRetry() {
+func (s *NetIntegrationSuiteParallelF) _TestSmartRetry() {
 	destPath := "/test.runner.SmartRetry/TestSmartRetry"
 	cgPath := "/test.runner.SmartRetry/TestSmartRetryCG"
 	testMsgCount := 100
@@ -2064,7 +2064,7 @@ ReadLoop2_TheReloopening:
 
 }
 
-func (s *NetIntegrationSuiteParallelE) TestStartFromWithCassandra() {
+func (s *NetIntegrationSuiteParallelE) _TestStartFromWithCassandra() {
 	destPath := "/dest/TestStartFromWithCassandra"
 	cgPathEverything := "/cg/TestStartFromWithCassandraEverything"
 	cgPathStartFrom := "/cg/TestStartFromWithCassandra"
@@ -2838,7 +2838,7 @@ ReadLoop:
 	consumerTest.Close()
 }
 
-func (s *NetIntegrationSuiteParallelC) TestEndToEndChecksum() {
+func (s *NetIntegrationSuiteParallelC) _TestEndToEndChecksum() {
 	destPath := "/dest/testChecksum"
 	cgPath := "/cg/testChecksum"
 	testMsgCount := 10
