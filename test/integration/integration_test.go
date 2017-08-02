@@ -141,7 +141,7 @@ func createCheramiClient(svcName string, ipaddr string, port int, logger bark.Lo
 	return cc
 }
 
-func (s *NetIntegrationSuiteParallelC) _TestMsgCacheLimit() {
+func (s *NetIntegrationSuiteParallelC) TestMsgCacheLimit() {
 	destPath := "/dest/TestMsgCacheLimit"
 	cgPath := "/cg/TestMsgCacheLimit"
 	testMsgCount := 100
@@ -315,7 +315,7 @@ ReadLoop2:
 	consumerTest.Close()
 }
 
-func (s *NetIntegrationSuiteParallelE) _TestWriteEndToEndSuccessWithCassandra() {
+func (s *NetIntegrationSuiteParallelE) TestWriteEndToEndSuccessWithCassandra() {
 	destPath := "/dest/testWriteEndToEndCassandra"
 	cgPath := "/cg/testWriteEndToEndCassandra"
 	testMsgCount := 100
@@ -456,7 +456,7 @@ ReadLoop:
 	s.Nil(err, "Failed to delete destination")
 }
 
-func (s *NetIntegrationSuiteParallelE) _TestWriteWithDrain() { // Disabled pending fix for flakiness
+func (s *NetIntegrationSuiteParallelE) TestWriteWithDrain() { // Disabled pending fix for flakiness
 	destPath := "/dest/testWriteDrain"
 	cgPath := "/cg/testWriteDrain"
 	testMsgCount := 1000
@@ -630,7 +630,7 @@ ReadLoop:
 	s.Nil(err, "Failed to delete destination")
 }
 
-func (s *NetIntegrationSuiteSerial) _TestWriteEndToEndMultipleStore() {
+func (s *NetIntegrationSuiteSerial) TestWriteEndToEndMultipleStore() {
 	destPath := "/dest/testCassandraMultiple"
 	cgPath := "/cg/testCassandraMultiple"
 	testMsgCount := 10
@@ -795,7 +795,7 @@ ReadLoop2:
 // then starts the consumer and a publisher. The consumer reads half the messages
 // that were published before waiting for the publisher to finish publishing all of the
 // messages -- the consumer then reads the rest of the messages, from the "backlog".
-func (s *NetIntegrationSuiteParallelB) _TestTimerQueue() {
+func (s *NetIntegrationSuiteParallelB) TestTimerQueue() {
 
 	destPath, cg1Path, cg2Path := "/test.dest/TestTimerQueue", "/test.cg/TestTimerQueue", "/test.cg.backlog/TestTimerQueue"
 
@@ -2064,7 +2064,7 @@ ReadLoop2_TheReloopening:
 
 }
 
-func (s *NetIntegrationSuiteParallelE) _TestStartFromWithCassandra() {
+func (s *NetIntegrationSuiteParallelE) TestStartFromWithCassandra() {
 	destPath := "/dest/TestStartFromWithCassandra"
 	cgPathEverything := "/cg/TestStartFromWithCassandraEverything"
 	cgPathStartFrom := "/cg/TestStartFromWithCassandra"
@@ -2284,7 +2284,7 @@ ReadLoop2:
 	s.Nil(err, "Failed to delete destination")
 }
 
-func (s *NetIntegrationSuiteParallelB) _TestQueueDepth() { // Disable pending fix for flakiness
+func (s *NetIntegrationSuiteParallelB) TestQueueDepth() { // Disable pending fix for flakiness
 	const (
 		destPath                = `/test.runner.SmartRetry/TestQueueDepth` // This path ensures that throttling is limited for this test
 		cgPath                  = `/test.runner.SmartRetry/TestQueueDepthCG`
@@ -2838,7 +2838,7 @@ ReadLoop:
 	consumerTest.Close()
 }
 
-func (s *NetIntegrationSuiteParallelC) _TestEndToEndChecksum() {
+func (s *NetIntegrationSuiteParallelC) TestEndToEndChecksum() {
 	destPath := "/dest/testChecksum"
 	cgPath := "/cg/testChecksum"
 	testMsgCount := 10
